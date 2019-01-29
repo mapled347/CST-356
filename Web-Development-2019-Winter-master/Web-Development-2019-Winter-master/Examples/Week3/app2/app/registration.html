@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Registration</title>
+        <!--removeIf(production)-->
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <!--endRemoveIf(production)-->
+        
+        <!-- inject:css -->
+        <!-- endinject -->
+    </head>
+
+    <body>
+        <h1>Registration</h1>
+
+        <form>
+            <div class='form-entry'>
+                First Name: <input id='first-name' type='text'/>
+            <div>
+
+            <div class='form-entry'>
+                Last Name: <input id="last-name" type='text'/>
+            </div>
+
+            <div class='form-entry'>
+                <input id='submit-btn' type='button' value='Submit'/>
+            </div>
+        </form>
+
+        <div id='error'></div>
+
+        <div class="menu-bar">
+            <span class="menu-item"><a href="index.html">Home</a></span>
+            <span class="menu-item"><a href="products.html">Products</a></span>
+        </div>
+
+        <!--removeIf(production)-->
+        <script src='js/registration.js'></script>
+        <!--endRemoveIf(production)-->
+        
+        <!-- inject:js -->
+        <!-- endinject -->
+
+        <script>
+            $(document).ready(function() {
+                initializeRegistration();
+            });
+        </script>
+    </body>
+</html>

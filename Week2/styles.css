@@ -1,0 +1,56 @@
+#HomePageHeader {
+    color: lightpink;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LogInPage {
+    background-color: lightblue;
+}
+
+#HomePage {
+    background-color:rgb(137, 137, 206);
+}
+
+#StudentPage {
+    background-color: lightgreen;
+}
+
+#PersonPage {
+    background-color: lightcoral;
+}
+
+h1 {
+    color: white;
+    padding-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+h2 {
+    color: rgb(35, 13, 71);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+    color: white;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    color: rgb(35, 13, 71);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
+th {
+    text-align: left;
+}
+td {
+    color: rgb(35, 13, 71);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
