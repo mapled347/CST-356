@@ -1,0 +1,109 @@
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356 (master)
+$ cd flask-app
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ docker build -t mapled347/myfirstapp .
+Sending build context to Docker daemon   7.68kB
+Step 1/8 : FROM alpine:3.5
+3.5: Pulling from library/alpine
+a44d943737e8: Pull complete
+Digest: sha256:b894cf1fe97eec6905af1761bff0a7c3e03a214d0271a76eaf42985ece38845c
+Status: Downloaded newer image for alpine:3.5
+ ---> eec2d71b4945
+Step 2/8 : RUN apk add --update py2-pip
+ ---> Running in 665159a61ca7
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.5/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.5/community/x86_64/APKINDEX.tar.gz
+(1/12) Installing libbz2 (1.0.6-r5)
+(2/12) Installing expat (2.2.0-r1)
+(3/12) Installing libffi (3.2.1-r2)
+(4/12) Installing gdbm (1.12-r0)
+(5/12) Installing ncurses-terminfo-base (6.0_p20171125-r1)
+(6/12) Installing ncurses-terminfo (6.0_p20171125-r1)
+(7/12) Installing ncurses-libs (6.0_p20171125-r1)
+(8/12) Installing readline (6.3.008-r4)
+(9/12) Installing sqlite-libs (3.15.2-r2)
+(10/12) Installing python2 (2.7.15-r0)
+(11/12) Installing py-setuptools (29.0.1-r0)
+(12/12) Installing py2-pip (9.0.0-r1)
+Executing busybox-1.25.1-r2.trigger
+OK: 62 MiB in 23 packages
+Removing intermediate container 665159a61ca7
+ ---> a55704cc0343
+Step 3/8 : COPY requirements.txt /usr/src/app/
+ ---> 01ed8f98b3c4
+Step 4/8 : RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+ ---> Running in eea5f1f9fbdf
+Collecting Flask==0.10.1 (from -r /usr/src/app/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/db/9c/149ba60c47d107f85fe52564133348458f093dd5e6b57a5b60ab9ac517bb/Flask-0.10.1.tar.gz (544kB)
+Collecting Werkzeug>=0.7 (from Flask==0.10.1->-r /usr/src/app/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)
+Collecting Jinja2>=2.4 (from Flask==0.10.1->-r /usr/src/app/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+Collecting itsdangerous>=0.21 (from Flask==0.10.1->-r /usr/src/app/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.4->Flask==0.10.1->-r /usr/src/app/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/ac/7e/1b4c2e05809a4414ebce0892fe1e32c14ace86ca7d50c70f00979ca9b3a3/MarkupSafe-1.1.0.tar.gz
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, itsdangerous, Flask
+  Running setup.py install for MarkupSafe: started
+    Running setup.py install for MarkupSafe: finished with status 'done'
+  Running setup.py install for Flask: started
+    Running setup.py install for Flask: finished with status 'done'
+Successfully installed Flask-0.10.1 Jinja2-2.10 MarkupSafe-1.1.0 Werkzeug-0.14.1 itsdangerous-1.1.0
+You are using pip version 9.0.0, however version 19.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Removing intermediate container eea5f1f9fbdf
+ ---> c82dba399a34
+Step 5/8 : COPY app.py /usr/src/app/
+ ---> b568780ebc10
+Step 6/8 : COPY templates/index.html /usr/src/app/templates/
+COPY failed: stat /mnt/sda1/var/lib/docker/tmp/docker-builder147026521/templates/index.html: no such file or directory
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ docker run -d -p 8080:5000 --name myfirstapp myfirstapp
+Unable to find image 'myfirstapp:latest' locally
+C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: pull access denied for myfirstapp, repository does not exist or may require 'docker login'.
+See 'C:\Program Files\Docker Toolbox\docker.exe run --help'.
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username (mapled347): mapled347
+Password:
+Login Succeeded
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ docker push mapled347/myfirstapp
+The push refers to repository [docker.io/mapled347/myfirstapp]
+An image does not exist locally with the tag: mapled347/myfirstapp
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ docker run -p 8080:5000 --name myfirstapp mapled347/myfirstapp
+Unable to find image 'mapled347/myfirstapp:latest' locally
+C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: manifest for mapled347/myfirstapp:latest not found.
+See 'C:\Program Files\Docker Toolbox\docker.exe run --help'.
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ ls
+app.py  Dockerfile  index.html  requirements.txt  templates/
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ docker run -d -p 8080:5000 --name myfirstapp mapled347/myfirstapp
+Unable to find image 'mapled347/myfirstapp:latest' locally
+C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: manifest for mapled347/myfirstapp:latest not found.
+See 'C:\Program Files\Docker Toolbox\docker.exe run --help'.
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$ docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+<none>                      <none>              b568780ebc10        8 minutes ago       57MB
+app1                        latest              50d5f4c90a8f        2 hours ago         17.8MB
+mapled347/app1              latest              50d5f4c90a8f        2 hours ago         17.8MB
+hello-world                 latest              fce289e99eb9        4 weeks ago         1.84kB
+nginx                       alpine              315798907716        4 weeks ago         17.8MB
+alpine                      3.5                 eec2d71b4945        5 weeks ago         4MB
+alpine                      latest              3f53bb00af94        5 weeks ago         4.41MB
+dockersamples/static-site   latest              f589ccde7957        2 years ago         191MB
+
+foxyd@DANA-MSI MINGW64 ~/Documents/#OIT Projects/WINTER 2019/CST 356/flask-app (master)
+$
