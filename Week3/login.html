@@ -1,0 +1,51 @@
+<html>
+    
+    <head>
+        <title>Log In</title>
+        <!--removeIf(production)-->
+        <!--removeIf(production)-->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <!--endRemoveIf(production)-->
+        
+        <!-- inject:css -->
+        <!-- endinject -->
+    </head>
+
+    <body id="LogInPage">
+
+        <p>
+            <a href="http://127.0.0.1:5500/student.html">Student Page</a> |
+            <a href="http://127.0.0.1:5500/person.html">Person Page</a> |
+            <a href="http://127.0.0.1:5500/index.html">Home Page</a>
+        </p>            
+
+        <form action="http://127.0.0.1:5500/index.html" method="POST">
+            <fieldset>
+                <legend>
+                    <b>Log In:</b>
+                </legend>
+                User name:<br>
+                <input type="text" name="username"><br>
+                Password:<br>
+                <input  type="text" name="password"><br><br>
+                <input type="button" value="Enter">
+            </fieldset>
+        </form>
+
+        <!--removeIf(production)-->
+        <script src='js/login.js'></script>
+        <!--endRemoveIf(production)-->
+
+        <!-- inject:js -->
+        <!-- endinject -->
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                initializeLogin();
+            });
+        </script>
+
+    </body>
+        
+</html>
