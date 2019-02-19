@@ -2,6 +2,6 @@ FROM nginx:alpine
 
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
-COPY . /usr/share/nginx/app/
+COPY . /dist/usr/share/nginx/app/
 
 EXPOSE 80
