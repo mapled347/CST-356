@@ -1,0 +1,14 @@
+
+{
+	"folders": [
+		{
+			"path": "webapp"
+		},
+		{
+			"path": "webapi"
+		},
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "webapp"
+	}
+}
