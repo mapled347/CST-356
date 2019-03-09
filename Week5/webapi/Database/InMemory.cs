@@ -7,12 +7,12 @@ namespace Database
         public static List<Person> persons = new List<Person> {
             new Person {
                 FirstName = "Charlie",
-                MiddleInitials = "J",
+                MiddleInitial = "J",
                 LastName = "Chaplin"
             },
             new Person {
                 FirstName = "Jennifer",
-                MiddleInitials = "L",
+                MiddleInitial = "L",
                 LastName = "Connoly"
             },
         };

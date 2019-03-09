@@ -1,0 +1,6 @@
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\week5\webapi\obj\Debug\netcoreapp2.2\webapi.csprojAssemblyReference.cache
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\week5\webapi\obj\Debug\netcoreapp2.2\webapi.csproj.CoreCompileInputs.cache
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\week5\webapi\obj\Debug\netcoreapp2.2\webapi.RazorAssemblyInfo.cache
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\week5\webapi\obj\Debug\netcoreapp2.2\webapi.RazorAssemblyInfo.cs
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\week5\webapi\obj\Debug\netcoreapp2.2\webapi.AssemblyInfoInputs.cache
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\week5\webapi\obj\Debug\netcoreapp2.2\webapi.AssemblyInfo.cs
