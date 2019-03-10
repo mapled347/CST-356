@@ -1,3 +1,4 @@
+
 {
 	"folders": [
 		{
@@ -6,9 +7,6 @@
 		{
 			"path": "webapi"
 		},
-		{
-			"path": "database"
-		}
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "webapp"

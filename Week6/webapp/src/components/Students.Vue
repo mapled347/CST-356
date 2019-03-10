@@ -10,8 +10,8 @@
             </thead>
             <tbody>
                 <tr v-for="student in students" :key="student.id">
-                    <td>{{ student.studentid }}</td>
-                    <td>${{ student.emailaddress }}</td>
+                    <td>{{ student.studentID }}</td>
+                    <td>{{ student.emailAddress }}</td>
                 </tr>
             </tbody>
         </table>
@@ -25,13 +25,13 @@
         
         data () {
             return {
-                student: []
+                students: []
             }
         },
         methods: {
             getStudents: function() {
                 let studentsApi = process.env.STUDENT_API;
-                Vue.axios.get(studnetsApi).then(
+                Vue.axios.get(studentsApi).then(
                     (response) => {
                         console.log(response)
                         this.students = response.data;

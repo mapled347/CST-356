@@ -11,9 +11,9 @@
             </thead>
             <tbody>
                 <tr v-for="person in persons" :key="person.id">
-                    <td>{{ person.firstname }}</td>
-                    <td>${{ person.middleintial }}</td>
-                    <td>{{ person.lastname ? 'Yes' : 'No' }}</td>
+                    <td>{{ person.firstName }}</td>
+                    <td>{{ person.middleInitial }}</td>
+                    <td>{{ person.lastName }}</td>
                 </tr>
             </tbody>
         </table>
@@ -27,7 +27,7 @@
         
         data () {
             return {
-                person: []
+                persons: []
             }
         },
         methods: {
