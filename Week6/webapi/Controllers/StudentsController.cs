@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Database;
 
 namespace webapi.Controllers
@@ -11,18 +12,33 @@ namespace webapi.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<List<Student>> Get()
+        
+        private readonly SchoolContext _dbContext;
+
+        public StudentsController(SchoolContext dbContext)
         {
-            return getStudents();
+            _dbContext = dbContext;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        private List<Student> getStudents()
+        [HttpGet]
+        public ActionResult<List<Student>> GetAllStudents()
         {
-            return InMemory.students;
+            return Ok(_dbContext.Student.Include(p => p.Person).ToList());
         }
+
+        // [HttpGet("{studentId}")]
+        // public ActionResult<Student> GetStudent(int studentId)
+        // {
+        //     var student = _dbContext.Student
+        //         .SingleOrDefault(p => p.StudentId == studentId);
+
+        //     if (student != null) {
+        //         return student;
+        //     } else {
+        //         return NotFound();
+        //     }
+        // }
+
+
     }
 }

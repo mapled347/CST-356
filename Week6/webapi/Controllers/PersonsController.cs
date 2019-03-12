@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Database;
 
 namespace webapi.Controllers
@@ -11,32 +12,32 @@ namespace webapi.Controllers
     [ApiController]
     public class PersonsController : ControllerBase
     {
-        // GET api/values
+        
+        private readonly SchoolContext _dbContext;
+
+        public PersonsController(SchoolContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         [HttpGet]
-        public ActionResult<List<Person>> Get()
+        public ActionResult<List<Person>> GetAllPersons()
         {
-            return getPersons();
+            return Ok(_dbContext.Person.Include(p => p.Student).ToList());
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        private List<Person> getPersons()
-        {
-            return InMemory.persons;
-        }
-
-        // POST api/values
-        // [HttpPost]
-        // public void Post([FromBody] Person person)
+        // [HttpGet("{personId}")]
+        // public ActionResult<Person> GetPerson(int personId)
         // {
-        //     person.ID = getNextId();
+        //     var person = _dbContext.Person
+        //         .SingleOrDefault(p => p.PersonId == personId);
 
-        //     InMemory.persons.Add(person);
+        //     if (person != null) {
+        //         return person;
+        //     } else {
+        //         return NotFound();
+        //     }
         // }
 
-        // private int getNextID();
-        // {
-        //     return InMemory.persons.Max(p => p.Id) + 1;
-        // }
     }
 }

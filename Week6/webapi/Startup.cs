@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using Database;
 
 namespace webapi
 {
@@ -32,6 +34,16 @@ namespace webapi
             services.AddHttpClient();
             
             services.AddSingleton<IConfiguration>(Configuration);
+            
+            services.AddDbContext<SchoolContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("SchoolDatabase")));
+                
+            services.AddMvc().AddJsonOptions(
+                options => {
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                }
+            );
+                
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +59,11 @@ namespace webapi
                 // app.UseHsts();
             }
             
-            app.UseCors(builder => builder.AllowAnyOrigin());
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
 
             // app.UseHttpsRedirection();
             app.UseMvc();
