@@ -8,12 +8,11 @@ namespace Database.Entities
     {
         [Column("student_id")]
         [Key]
-         public long StudentId {get; set;}
+        public long StudentId { get; set; }
         [Column("email_address")]
-        public string EmailAddress {get; set;}
-    
-        [Column("person_id")]
-        public long PersonId { get; set; }
-        public Person Person { get; set; }
+        public string EmailAddress { get; set; }
+
+        public bool Special { get; set; }
+
 }
 }

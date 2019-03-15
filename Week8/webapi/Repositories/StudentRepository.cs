@@ -19,11 +19,10 @@ public class StudentRepository : IStudentRepository
     {
         try
         {
-            return _dbContext.Product.ToList();
+            return _dbContext.Student.ToList();
         } 
-        catch(Exception ex)
+        catch (Exception)
         {
-            _logger.LogError("Failed to get students.", ex);
             
             return new List<Student>();
         }

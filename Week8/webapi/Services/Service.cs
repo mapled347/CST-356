@@ -24,7 +24,7 @@ public class Service : IService
             });
             if (BusinessRules.studentIdIsOdd(student))
             {
-                System.Messagebox("Student " + student.StudentId + " is odd.");
+                student.Special = true;
             }
         }
 

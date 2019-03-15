@@ -34,3 +34,9 @@ C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\obj\Debu
 C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\obj\Debug\netcoreapp2.2\webapi.AssemblyInfo.cs
 C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\obj\Debug\netcoreapp2.2\webapi.dll
 C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\obj\Debug\netcoreapp2.2\webapi.pdb
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\bin\Debug\netcoreapp2.2\webapi.deps.json
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\bin\Debug\netcoreapp2.2\webapi.runtimeconfig.json
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\bin\Debug\netcoreapp2.2\webapi.runtimeconfig.dev.json
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\bin\Debug\netcoreapp2.2\webapi.dll
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\bin\Debug\netcoreapp2.2\webapi.pdb
+C:\Users\foxyd\Documents\#OIT Projects\WINTER 2019\CST 356\Week8\webapi\obj\Debug\netcoreapp2.2\webapi.RazorTargetAssemblyInfo.cache
