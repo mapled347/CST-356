@@ -5,7 +5,7 @@ using NUnit.Framework;
 using FakeItEasy;
 using FluentAssertions;
 using Database.Entities;
-using BusinessRules;
+using StudentBusinessRules;
 
 public class StudentServiceTests
 {
@@ -17,7 +17,7 @@ public class StudentServiceTests
     {
         _studentRepository = A.Fake<IStudentRepository>();
 
-        _service = new Servoce(_studentRepository);
+        _service = new Service(_studentRepository);
     }
 
     [Test]
@@ -51,7 +51,7 @@ public class StudentServiceTests
     public void ShouldReturnSpecialStudents()
     {
         // Arrange
-        var expectedStudentId = StudentBusinessRules.Special + "test";
+        var expectedStudentId = 1;
 
         A.CallTo(() => _studentRepository.GetAllStudents()).Returns(
             new List<Student> {
@@ -60,7 +60,7 @@ public class StudentServiceTests
                     EmailAddress = "poseyfamily@outlook.com"
                 },
                 new Student {
-                    StudentId = 11,
+                    StudentId = 12,
                     EmailAddress = "ladybirddog@macklemore.net"
                 }
             }
