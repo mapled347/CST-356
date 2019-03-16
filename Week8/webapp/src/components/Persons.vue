@@ -5,14 +5,14 @@
             <thead>
                 <tr>
                     <th>First Name</th>
-                    <th>MI</th>
+                    <th>Middle Name</th>
                     <th>Last Name</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="person in persons" :key="person.id">
                     <td>{{ person.firstName }}</td>
-                    <td>{{ person.middleInitial }}</td>
+                    <td>{{ person.middleName }}</td>
                     <td>{{ person.lastName }}</td>
                 </tr>
             </tbody>

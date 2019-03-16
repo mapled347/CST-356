@@ -17,14 +17,14 @@ public class StudentRepository : IStudentRepository
 
     public List<Student> GetAllStudents()
     {
-        try
-        {
+        // try
+        // {
             return _dbContext.Student.ToList();
-        } 
-        catch (Exception)
-        {
+        // } 
+        // catch (Exception)
+        // {
             
-            return new List<Student>();
-        }
+        //     return new List<Student>();
+        // }
     }
 }

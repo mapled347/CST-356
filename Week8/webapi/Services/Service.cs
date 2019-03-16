@@ -18,14 +18,15 @@ public class Service : IService
 
         foreach(var student in _studentRepository.GetAllStudents())
         {
-            studentDtos.Add(new StudentDto {
-                StudentId = student.StudentId,
-                EmailAddress = student.EmailAddress,
-            });
+            var studentDto = new StudentDto {
+                StudentId  = student.StudentId,
+                EmailAddress = student.EmailAddress
+            };
             if (BusinessRules.studentIdIsOdd(student))
             {
-                student.Special = true;
+                studentDto.Special = true;
             }
+            studentDtos.Add(studentDto);
         }
 
         return studentDtos;

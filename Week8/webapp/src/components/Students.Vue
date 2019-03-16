@@ -10,7 +10,7 @@
             </thead>
             <tbody>
                 <tr v-for="student in students" :key="student.id">
-                    <td>{{ student.studentId }}</td>
+                    <td v-bind:class="{ special: student.special }">{{ student.studentId }}</td>
                     <td>{{ student.emailAddress }}</td>
                 </tr>
             </tbody>
@@ -55,5 +55,8 @@
     table, th, td {
         border: 1px solid black;
         padding: 10px;
+    }
+    .special {
+        background-color: lightgreen;
     }
 </style>

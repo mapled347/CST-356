@@ -12,7 +12,5 @@ namespace Database.Entities
         [Column("email_address")]
         public string EmailAddress { get; set; }
 
-        public bool Special { get; set; }
-
 }
 }
