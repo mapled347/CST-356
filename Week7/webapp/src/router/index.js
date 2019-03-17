@@ -4,15 +4,16 @@ import Home from '@/components/Home'
 import Students from '@/components/Students'
 import Persons from '@/components/Persons'
 import Login from '@/components/Login'
+import callback from '@/components/Callback'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'Home',
-      component: Home
+      path: '/callback',
+      component: callback
     },
     {
       path: '/home',

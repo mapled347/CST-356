@@ -31,7 +31,7 @@
         methods: {
             getStudents: function() {
                 let studentsApi = process.env.STUDENT_API;
-                Vue.axios.get(studentsApi).then(
+                Vue.axios.get(url, this.getAuthHeader()).then(
                     (response) => {
                         console.log(response)
                         this.students = response.data;

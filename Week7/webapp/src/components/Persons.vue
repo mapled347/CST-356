@@ -24,16 +24,23 @@
     import Vue from 'vue';
     export default {
         name: 'Persons',
-        
+        props: ['auth'],
         data () {
             return {
                 persons: []
             }
         },
         methods: {
+            getAuthHeader: function() {
+                return {
+                    headers: {
+                        Authorization: 'Bearer ' + this.auth.accessToken
+                    }
+                }
+            },
             getPersons: function() {
                 let personsApi = process.env.PERSON_API;
-                Vue.axios.get(personsApi).then(
+                Vue.axios.get(url, this.getAuthHeader()).then(
                     (response) => {
                         console.log(response)
                         this.persons = response.data;
