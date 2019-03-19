@@ -22,15 +22,22 @@
     import Vue from 'vue';
     export default {
         name: 'Students',
-        
+        props: ['auth'],
         data () {
             return {
                 students: []
             }
         },
         methods: {
+            getAuthHeader: function() {
+                return {
+                    headers: {
+                        Authorization: 'Bearer ' + this.auth.accessToken
+                    }
+                }
+            },
             getStudents: function() {
-                let studentsApi = process.env.STUDENT_API;
+                let url = process.env.STUDENT_API;
                 Vue.axios.get(url, this.getAuthHeader()).then(
                     (response) => {
                         console.log(response)

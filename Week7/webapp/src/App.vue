@@ -16,13 +16,13 @@
               Home
           </router-link>
 
-          <router-link to="/person"
+          <router-link to="/persons"
             class="btn btn-primary btn-margin"
             v-if="authenticated">
               Persons
           </router-link>
 
-          <router-link to="/student"
+          <router-link to="/students"
             class="btn btn-primary btn-margin"
             v-if="authenticated">
               Students

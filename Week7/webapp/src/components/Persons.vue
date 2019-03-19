@@ -39,7 +39,7 @@
                 }
             },
             getPersons: function() {
-                let personsApi = process.env.PERSON_API;
+                let url = process.env.PERSON_API;
                 Vue.axios.get(url, this.getAuthHeader()).then(
                     (response) => {
                         console.log(response)
